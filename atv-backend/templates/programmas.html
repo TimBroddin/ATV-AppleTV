@@ -1,0 +1,21 @@
+<document>
+  <listTemplate>
+    <list>
+      <header>
+        <title>Programma's</title>
+      </header>
+      <section>
+        {{#each items}}
+        <listItemLockup url="{{ url }}">
+          <title>{{ title }}</title>
+          <relatedContent>
+            <lockup>
+              <img src="{{ image }}" />
+            </lockup>
+          </relatedContent>
+        </listItemLockup>
+        {{/each}}
+      </section>
+    </list>
+  </listTemplate>
+</document>

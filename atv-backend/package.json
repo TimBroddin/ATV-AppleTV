@@ -1,0 +1,19 @@
+{
+  "name": "atv",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "handlebars": "^4.2.0",
+    "lodash": "^4.17.15",
+    "node-fetch": "^2.6.0",
+    "query-string": "^6.8.3",
+    "rss-parser": "^3.7.2",
+    "serverless-express": "^2.0.11"
+  },
+  "devDependencies": {
+    "serverless-offline": "^5.11.0"
+  }
+}

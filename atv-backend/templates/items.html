@@ -1,0 +1,31 @@
+<document>
+  <stackTemplate>
+    <banner> </banner>
+    <collectionList>
+      <grid>
+        <section>
+          {{#each items}}
+          <lockup url="{{ url }}" label="{{ title }}" id="{{ _id }}">
+            <img src="{{ enclosure.url }}" width="480" height="270" />
+            <title>{{ title }}</title>
+            <relatedContent>
+              <infoTable>
+                <info>
+                  {{#if description}}
+                  <header>
+                    <title>{{ title }}</title>
+                  </header>
+                  <description>{{ description }}</description>
+                  {{ else }}
+                  <title>{{ title }}</title>
+                  {{/if}}
+                </info>
+              </infoTable>
+            </relatedContent>
+          </lockup>
+          {{/each}}
+        </section>
+      </grid>
+    </collectionList>
+  </stackTemplate>
+</document>
