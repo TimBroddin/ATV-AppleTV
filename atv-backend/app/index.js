@@ -105,4 +105,24 @@ app.get("/video", async (req, res) => {
   }
 });
 
+app.get("/topshelf", async (req, res) => {
+  const feed = await parser.parseURL("https://atv.be/rss");
+  const baseUrl =
+    req.host === "localhost"
+      ? `https://${req.host}:3000/`
+      : `https://${req.host}/dev/`;
+  const items = feed.items.map(item => {
+    return {
+      ...item,
+      url: `${baseUrl}video?uid=${item.guid.replace(
+        "https://atv.be/nieuws/",
+        ""
+      )}&type=nieuws`,
+      image: item.enclosure ? item.enclosure.url : null
+    };
+  });
+
+  res.json({ items: items.slice(0, 15) });
+});
+
 module.exports = app;

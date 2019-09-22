@@ -10,7 +10,36 @@
 		DE0B1CAD233222E400CBFBC0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE0B1CAC233222E400CBFBC0 /* AppDelegate.swift */; };
 		DE0B1CB0233222E500CBFBC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE0B1CAF233222E500CBFBC0 /* Assets.xcassets */; };
 		DE0B1CB3233222E500CBFBC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE0B1CB1233222E500CBFBC0 /* LaunchScreen.storyboard */; };
+		DEA5F0C62337AF8100F47E9F /* TVServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA5F0B42337AF6500F47E9F /* TVServices.framework */; };
+		DEA5F0C92337AF8100F47E9F /* ContentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA5F0C82337AF8100F47E9F /* ContentProvider.swift */; };
+		DEA5F0CD2337AF8100F47E9F /* ATV Topshelf.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DEA5F0C52337AF8100F47E9F /* ATV Topshelf.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DEA5F0D22337B12400F47E9F /* ItemResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA5F0D12337B12400F47E9F /* ItemResponse.swift */; };
+		DEA5F0D42337B15000F47E9F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA5F0D32337B15000F47E9F /* Item.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DEA5F0CB2337AF8100F47E9F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE0B1CA1233222E400CBFBC0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DEA5F0C42337AF8100F47E9F;
+			remoteInfo = "ATV Topshelf";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DEA5F0BD2337AF6500F47E9F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DEA5F0CD2337AF8100F47E9F /* ATV Topshelf.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DE0B1CA9233222E400CBFBC0 /* ATV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATV.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,6 +48,12 @@
 		DE0B1CAF233222E500CBFBC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE0B1CB2233222E500CBFBC0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE0B1CB4233222E500CBFBC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEA5F0B42337AF6500F47E9F /* TVServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TVServices.framework; path = System/Library/Frameworks/TVServices.framework; sourceTree = SDKROOT; };
+		DEA5F0C52337AF8100F47E9F /* ATV Topshelf.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ATV Topshelf.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DEA5F0C82337AF8100F47E9F /* ContentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentProvider.swift; sourceTree = "<group>"; };
+		DEA5F0CA2337AF8100F47E9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEA5F0D12337B12400F47E9F /* ItemResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemResponse.swift; sourceTree = "<group>"; };
+		DEA5F0D32337B15000F47E9F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +64,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DEA5F0C22337AF8100F47E9F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEA5F0C62337AF8100F47E9F /* TVServices.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -36,6 +79,8 @@
 			isa = PBXGroup;
 			children = (
 				DE0B1CAB233222E400CBFBC0 /* ATV */,
+				DEA5F0C72337AF8100F47E9F /* ATV Topshelf */,
+				DEA5F0B32337AF6500F47E9F /* Frameworks */,
 				DE0B1CAA233222E400CBFBC0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				DE0B1CA9233222E400CBFBC0 /* ATV.app */,
+				DEA5F0C52337AF8100F47E9F /* ATV Topshelf.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,6 +106,25 @@
 			path = ATV;
 			sourceTree = "<group>";
 		};
+		DEA5F0B32337AF6500F47E9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DEA5F0B42337AF6500F47E9F /* TVServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEA5F0C72337AF8100F47E9F /* ATV Topshelf */ = {
+			isa = PBXGroup;
+			children = (
+				DEA5F0C82337AF8100F47E9F /* ContentProvider.swift */,
+				DEA5F0CA2337AF8100F47E9F /* Info.plist */,
+				DEA5F0D12337B12400F47E9F /* ItemResponse.swift */,
+				DEA5F0D32337B15000F47E9F /* Item.swift */,
+			);
+			path = "ATV Topshelf";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -70,15 +135,34 @@
 				DE0B1CA5233222E400CBFBC0 /* Sources */,
 				DE0B1CA6233222E400CBFBC0 /* Frameworks */,
 				DE0B1CA7233222E400CBFBC0 /* Resources */,
+				DEA5F0BD2337AF6500F47E9F /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DEA5F0CC2337AF8100F47E9F /* PBXTargetDependency */,
 			);
 			name = ATV;
 			productName = ATV;
 			productReference = DE0B1CA9233222E400CBFBC0 /* ATV.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DEA5F0C42337AF8100F47E9F /* ATV Topshelf */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DEA5F0CE2337AF8100F47E9F /* Build configuration list for PBXNativeTarget "ATV Topshelf" */;
+			buildPhases = (
+				DEA5F0C12337AF8100F47E9F /* Sources */,
+				DEA5F0C22337AF8100F47E9F /* Frameworks */,
+				DEA5F0C32337AF8100F47E9F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ATV Topshelf";
+			productName = "ATV Topshelf";
+			productReference = DEA5F0C52337AF8100F47E9F /* ATV Topshelf.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -91,6 +175,9 @@
 				ORGANIZATIONNAME = "Tim Broddin";
 				TargetAttributes = {
 					DE0B1CA8233222E400CBFBC0 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					DEA5F0C42337AF8100F47E9F = {
 						CreatedOnToolsVersion = 11.0;
 					};
 				};
@@ -109,6 +196,7 @@
 			projectRoot = "";
 			targets = (
 				DE0B1CA8233222E400CBFBC0 /* ATV */,
+				DEA5F0C42337AF8100F47E9F /* ATV Topshelf */,
 			);
 		};
 /* End PBXProject section */
@@ -123,6 +211,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DEA5F0C32337AF8100F47E9F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -134,7 +229,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DEA5F0C12337AF8100F47E9F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DEA5F0C92337AF8100F47E9F /* ContentProvider.swift in Sources */,
+				DEA5F0D42337B15000F47E9F /* Item.swift in Sources */,
+				DEA5F0D22337B12400F47E9F /* ItemResponse.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DEA5F0CC2337AF8100F47E9F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DEA5F0C42337AF8100F47E9F /* ATV Topshelf */;
+			targetProxy = DEA5F0CB2337AF8100F47E9F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DE0B1CB1233222E500CBFBC0 /* LaunchScreen.storyboard */ = {
@@ -265,8 +378,10 @@
 		DE0B1CB8233222E500CBFBC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = FQ2L79KK5B;
 				INFOPLIST_FILE = ATV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -277,15 +392,17 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 12.0;
+				TVOS_DEPLOYMENT_TARGET = 13.0;
 			};
 			name = Debug;
 		};
 		DE0B1CB9233222E500CBFBC0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = FQ2L79KK5B;
 				INFOPLIST_FILE = ATV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -296,7 +413,45 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 3;
-				TVOS_DEPLOYMENT_TARGET = 12.0;
+				TVOS_DEPLOYMENT_TARGET = 13.0;
+			};
+			name = Release;
+		};
+		DEA5F0CF2337AF8100F47E9F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FQ2L79KK5B;
+				INFOPLIST_FILE = "ATV Topshelf/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "be.broddin.ATV.ATV-Topshelf";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+			};
+			name = Debug;
+		};
+		DEA5F0D02337AF8100F47E9F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FQ2L79KK5B;
+				INFOPLIST_FILE = "ATV Topshelf/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "be.broddin.ATV.ATV-Topshelf";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
 			};
 			name = Release;
 		};
@@ -317,6 +472,15 @@
 			buildConfigurations = (
 				DE0B1CB8233222E500CBFBC0 /* Debug */,
 				DE0B1CB9233222E500CBFBC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DEA5F0CE2337AF8100F47E9F /* Build configuration list for PBXNativeTarget "ATV Topshelf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DEA5F0CF2337AF8100F47E9F /* Debug */,
+				DEA5F0D02337AF8100F47E9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

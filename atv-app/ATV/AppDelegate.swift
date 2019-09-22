@@ -8,6 +8,8 @@
 
 import UIKit
 import TVMLKit
+import os.log
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, TVApplicationControllerDelegate {
@@ -109,6 +111,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, TVApplicationControllerDe
     
     func appController(_ appController: TVApplicationController, didStop options: [String: Any]?) {
         print("\(#function) invoked with options: \(options ?? [:])")
+    }
+    
+    // MARK: Top shelf
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
+        os_log("Will open URL from Top Shelf. URL=%@", url as NSURL)
+        appController?.evaluate(inJavaScriptContext: { (context: JSContext) in
+                   let appObject : JSValue = context.objectForKeyedSubscript("App")
+                   
+                   if appObject.hasProperty("topshelf") {
+                    appObject.invokeMethod("topshelf", withArguments: [url.absoluteString])
+                   } else {
+                    print("No topshelf.")
+            }
+                   }, completion: { (success: Bool) in
+                       // ...
+                   })
+        
+        return true
     }
 }
 

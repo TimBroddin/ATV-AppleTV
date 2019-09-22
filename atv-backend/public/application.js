@@ -83,3 +83,13 @@ var createAlert = function(title, description) {
 
   return alertDoc;
 };
+
+App.topshelf = url => {
+  if (url === "atv://live") {
+    Presenter.loadMedia(
+      "http://api.new.livestream.com/accounts/27755193/events/8452381/live.m3u8"
+    );
+  } else if (url.indexOf("atv://play") !== -1) {
+    Presenter.loadMedia(url.replace("atv://play/", ""));
+  }
+};

@@ -186,8 +186,6 @@ var Presenter = {
     playList.push(item);
     player.playlist = playList;
     player.play();
-
-    AnalyticsBridge.sendStream("topshelf " + url);
   },
 
   /**
