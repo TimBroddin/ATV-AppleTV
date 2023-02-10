@@ -21,55 +21,58 @@ var resourceLoader;
  * The location attribute is automatically added to the object and represents
  * the URL that was used to retrieve the application JavaScript.
  */
-App.onLaunch = function(options) {
-  var javascriptFiles = [
-    `${options.BASEURL}ResourceLoader.js`,
-    `${options.BASEURL}Presenter.js`
-  ];
+App.onLaunch = function (options) {
+    var javascriptFiles = [
+        `${options.BASEURL}ResourceLoader.js`,
+        `${options.BASEURL}Presenter.js`,
+    ];
 
-  /**
-   * evaluateScripts is responsible for loading the JavaScript files neccessary
-   * for you app to run. It can be used at any time in your apps lifecycle.
-   *
-   * @param - Array of JavaScript URLs
-   * @param - Function called when the scripts have been evaluated. A boolean is
-   * passed that indicates if the scripts were evaluated successfully.
-   */
-  evaluateScripts(javascriptFiles, function(success) {
-    if (success) {
-      resourceLoader = new ResourceLoader(options.BASEURL);
-      var index = resourceLoader.loadResource(
-        `${options.BASEURL}tvos`,
-        function(resource) {
-          console.log(resource);
-          var doc = Presenter.makeDocument(resource);
-          doc.addEventListener("select", Presenter.load.bind(Presenter));
-          navigationDocument.pushDocument(doc);
-        }
-      );
-    } else {
-      /*
+    /**
+     * evaluateScripts is responsible for loading the JavaScript files neccessary
+     * for you app to run. It can be used at any time in your apps lifecycle.
+     *
+     * @param - Array of JavaScript URLs
+     * @param - Function called when the scripts have been evaluated. A boolean is
+     * passed that indicates if the scripts were evaluated successfully.
+     */
+    evaluateScripts(javascriptFiles, function (success) {
+        if (success) {
+            resourceLoader = new ResourceLoader(options.BASEURL);
+            var index = resourceLoader.loadResource(
+                `${options.BASEURL}tvos`,
+                function (resource) {
+                    console.log(resource);
+                    var doc = Presenter.makeDocument(resource);
+                    doc.addEventListener(
+                        "select",
+                        Presenter.load.bind(Presenter)
+                    );
+                    navigationDocument.pushDocument(doc);
+                }
+            );
+        } else {
+            /*
             Be sure to handle error cases in your code. You should present a readable, and friendly
             error message to the user in an alert dialog.
 
             See alertDialog.xml.js template for details.
             */
-      var alert = createAlert(
-        "Evaluate Scripts Error",
-        "There was an error attempting to evaluate the external JavaScript files.\n\n Please check your network connection and try again later."
-      );
-      navigationDocument.presentModal(alert);
+            var alert = createAlert(
+                "Evaluate Scripts Error",
+                "There was an error attempting to evaluate the external JavaScript files.\n\n Please check your network connection and try again later."
+            );
+            navigationDocument.presentModal(alert);
 
-      throw "Playback Example: unable to evaluate scripts.";
-    }
-  });
+            throw "Playback Example: unable to evaluate scripts.";
+        }
+    });
 };
 
 /**
  * This convenience funnction returns an alert template, which can be used to present errors to the user.
  */
-var createAlert = function(title, description) {
-  var alertString = `<?xml version="1.0" encoding="UTF-8" ?>
+var createAlert = function (title, description) {
+    var alertString = `<?xml version="1.0" encoding="UTF-8" ?>
         <document>
           <alertTemplate>
             <title>${title}</title>
@@ -77,18 +80,23 @@ var createAlert = function(title, description) {
           </alertTemplate>
         </document>`;
 
-  var parser = new DOMParser();
+    var parser = new DOMParser();
 
-  var alertDoc = parser.parseFromString(alertString, "application/xml");
+    var alertDoc = parser.parseFromString(alertString, "application/xml");
 
-  return alertDoc;
+    return alertDoc;
 };
+
 
 App.topshelf = url => {
   if (url === "atv://live") {
-    Presenter.loadMedia(
-      "http://api.new.livestream.com/accounts/27755193/events/8452381/live.m3u8"
-    );
+    const result = fetch('https://livestream.com/accounts/27755193/events/8452381/player?width=640&height=360&enableInfoAndActivity=true&defaultDrawer=&autoPlay=true&mute=false').then(res => res.text()).then(text => {
+      const url = text.match(/"m3u8_url":"(.*?)"/)[1];
+  
+      Presenter.loadMedia(
+        url
+      );
+});
   } else if (url.indexOf("atv://play") !== -1) {
     Presenter.loadMedia(url.replace("atv://play/", ""));
   }
